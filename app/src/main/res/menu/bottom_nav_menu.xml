@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/frontTabFragment"
+        android:title="@string/tab_diet"
+        android:icon="@drawable/home_diet"/>
+
+    <item
+        android:id="@+id/foodTabFragment"
+        android:title="@string/tab_food"
+        android:icon="@drawable/food"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/personalFoodTabFragment"
+        android:title="@string/tab_personal_food"
+        android:icon="@drawable/personal_food"
+        app:showAsAction="ifRoom"
+        />
+</menu>

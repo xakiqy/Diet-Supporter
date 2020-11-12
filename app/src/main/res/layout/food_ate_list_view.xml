@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="property"
+            type="com.example.diet_supporter.database.FoodAte" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_food_ate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:lines="3"
+            android:maxEms="8"
+            android:minEms="8"
+            android:text="@{property.food_description}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edit_text_calories"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/edit_text_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(property.energy)}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/text_protein"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/text_food_ate"
+            app:layout_constraintTop_toTopOf="@+id/text_food_ate" />
+
+        <TextView
+            android:id="@+id/text_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:maxEms="3"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(property.protein)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_calories"
+            app:layout_constraintEnd_toStartOf="@+id/text_carbohydrate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_calories"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_calories" />
+
+        <TextView
+            android:id="@+id/text_carbohydrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(property.carbohydrate)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/text_protein"
+            app:layout_constraintEnd_toStartOf="@+id/text_fat"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/text_protein"
+            app:layout_constraintTop_toTopOf="@+id/text_protein" />
+
+        <TextView
+            android:id="@+id/text_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:lines="1"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(property.fat)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/text_carbohydrate"
+            app:layout_constraintEnd_toStartOf="@+id/text_weight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/text_carbohydrate"
+            app:layout_constraintTop_toTopOf="@+id/text_carbohydrate" />
+
+        <TextView
+            android:id="@+id/text_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:lines="1"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(property.weight)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/text_carbohydrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/text_fat"
+            app:layout_constraintTop_toTopOf="@+id/text_carbohydrate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

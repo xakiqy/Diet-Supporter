@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.diet_supporter.viewmodel.FrontTabViewModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/fragment_tab_diet_xml_constraintlayout_scene">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/graph_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/graph_food_ate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart_calories"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_next_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.github.mikephil.charting.charts.PieChart>
+
+            <Button
+                android:id="@+id/button_next_type"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="50dp"
+                android:layout_height="65dp"
+                app:icon="@drawable/change"
+                app:iconGravity="textEnd"
+                app:iconSize="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/chart_calories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/chart_calories"
+                app:layout_constraintVertical_bias="0.75" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/graph_food_ate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/graph_layout">
+
+            <TextView
+                android:id="@+id/label_protein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="5"
+                android:minEms="3"
+                android:text="@string/label_protein_abbr"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/label_calories"
+                app:layout_constraintEnd_toStartOf="@+id/label_carbohydrate"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/label_calories" />
+
+            <TextView
+                android:id="@+id/label_food_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minEms="8"
+                android:text="@string/label_food_name_abbr"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/label_calories"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="5"
+                android:minEms="3"
+                android:text="@string/label_calories_abbr"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/label_food_name"
+                app:layout_constraintEnd_toStartOf="@+id/label_protein"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/label_food_name" />
+
+            <TextView
+                android:id="@+id/label_fat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="5"
+                android:minEms="3"
+                android:text="@string/label_fat_abbr"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/label_carbohydrate"
+                app:layout_constraintEnd_toStartOf="@+id/label_weight_grams"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/label_carbohydrate" />
+
+            <TextView
+                android:id="@+id/label_weight_grams"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:maxLength="5"
+                android:minEms="3"
+                android:text="@string/label_weight"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/label_fat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/label_fat" />
+
+            <TextView
+                android:id="@+id/label_carbohydrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxEms="3"
+                android:maxLength="5"
+                android:minEms="3"
+                android:text="@string/label_carbohydrate_abbr"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/label_protein"
+                app:layout_constraintEnd_toStartOf="@+id/label_fat"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/label_protein" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_food_ate"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:foodAteListData="@{viewModel.dietHistoryWithFoodAte.foodAte}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_food_name"
+                app:spanCount="1"
+                tools:listitem="@layout/food_ate_list_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

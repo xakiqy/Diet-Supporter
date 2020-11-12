@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.diet_supporter.viewmodel.PersonalFoodConsumeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:transitionName="@string/transitionImg"
+            app:imageUrlBase="@{viewModel.foodAte.pathToImg}"
+            app:layout_constraintBottom_toTopOf="@+id/label_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/text_food_ate"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:maxEms="16"
+            android:minEms="16"
+            android:text="@{viewModel.foodAte.food_description}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/label_calories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_image" />
+
+        <TextView
+            android:id="@+id/label_calories"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_calories"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_calories"
+            app:layout_constraintEnd_toEndOf="@+id/edit_text_calories"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/edit_text_calories"
+            app:layout_constraintTop_toBottomOf="@+id/text_food_ate" />
+
+        <TextView
+            android:id="@+id/edit_text_calories"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:text="@{String.valueOf(viewModel.foodAte.energy)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/label_carbohydrate"
+            app:layout_constraintEnd_toStartOf="@+id/text_protein"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_calories" />
+
+        <TextView
+            android:id="@+id/label_protein"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_protein"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/label_calories"
+            app:layout_constraintEnd_toEndOf="@+id/text_protein"
+            app:layout_constraintStart_toStartOf="@+id/text_protein" />
+
+        <TextView
+            android:id="@+id/text_protein"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(viewModel.foodAte.protein)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_text_calories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/edit_text_calories"
+            app:layout_constraintTop_toTopOf="@+id/edit_text_calories" />
+
+        <TextView
+            android:id="@+id/label_carbohydrate"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:maxEms="3"
+            android:minEms="6"
+            android:text="@string/label_carbohydrate"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/text_carbohydrate"
+            app:layout_constraintEnd_toEndOf="@+id/text_carbohydrate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/text_carbohydrate"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_calories" />
+
+        <TextView
+            android:id="@+id/label_fat"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_fat"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/label_carbohydrate"
+            app:layout_constraintEnd_toEndOf="@+id/text_fat"
+            app:layout_constraintStart_toStartOf="@+id/text_fat" />
+
+        <TextView
+            android:id="@+id/text_carbohydrate"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(viewModel.foodAte.carbohydrate)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/label_weight_grams"
+            app:layout_constraintEnd_toStartOf="@+id/text_fat"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_carbohydrate" />
+
+        <TextView
+            android:id="@+id/text_fat"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxEms="3"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:minEms="3"
+            android:text="@{String.valueOf(viewModel.foodAte.fat)}"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/text_carbohydrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/text_carbohydrate"
+            app:layout_constraintTop_toTopOf="@+id/text_carbohydrate" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/button_add_food"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_grams" />
+
+        <TextView
+            android:id="@+id/label_weight_grams"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_weight_grams"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_grams"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_carbohydrate" />
+
+        <EditText
+            android:id="@+id/edit_text_grams"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:ems="4"
+            android:inputType="numberSigned"
+            android:text="100"
+            app:layout_constraintBottom_toTopOf="@+id/button_add_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_weight_grams" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:checkedButton="@+id/toggleButton_calories"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/toggleButton_protein"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="protein" />
+
+            <Button
+                android:id="@+id/toggleButton_calories"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="calories" />
+
+            <Button
+                android:id="@+id/toggleButton_carbs"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="carbs" />
+
+            <Button
+                android:id="@+id/toggleButton_fat"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fat" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/user_calories_graph"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/toggleButtons"
+            app:layout_constraintEnd_toStartOf="@+id/button_right"
+            app:layout_constraintStart_toEndOf="@+id/button_left"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </com.github.mikephil.charting.charts.BarChart>
+
+        <Button
+            android:id="@+id/button_left"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="45dp"
+            android:layout_height="75dp"
+            app:icon="@drawable/button_left_image"
+            app:iconGravity="textStart"
+            app:iconSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_calories_graph"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/user_calories_graph" />
+
+        <Button
+            android:id="@+id/button_right"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="45dp"
+            android:layout_height="75dp"
+            app:icon="@drawable/button_right_image"
+            app:iconGravity="textEnd"
+            app:iconSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_calories_graph"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/user_calories_graph" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

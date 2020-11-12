@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transitionImgUnique" translatable="false">image %s</string>
+    <string name="transitionImg" translatable="false">transitionImg</string>
+</resources>
+

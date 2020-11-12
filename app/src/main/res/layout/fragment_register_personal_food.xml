@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/TextAppearance.Title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_personal_register">
+
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/label_food"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <TextView
+            android:id="@+id/label_calories"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_calories"
+            app:layout_constraintBottom_toTopOf="@+id/editText_calories"
+            app:layout_constraintEnd_toStartOf="@+id/label_carbs"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_food_desc" />
+
+        <TextView
+            android:id="@+id/label_carbs"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_carbohydrate"
+            app:layout_constraintBottom_toBottomOf="@+id/label_calories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/label_calories" />
+
+        <EditText
+            android:id="@+id/editText_calories"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintBottom_toTopOf="@+id/label_protein"
+            app:layout_constraintEnd_toEndOf="@+id/label_calories"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/label_calories"
+            app:layout_constraintTop_toBottomOf="@+id/label_calories" />
+
+        <EditText
+            android:id="@+id/editText_carbs"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_calories"
+            app:layout_constraintEnd_toEndOf="@+id/label_carbs"
+            app:layout_constraintStart_toStartOf="@+id/label_carbs" />
+
+        <EditText
+            android:id="@+id/editText_food_desc"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintBottom_toTopOf="@+id/label_calories"
+            app:layout_constraintEnd_toEndOf="@+id/label_food"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/label_food"
+            app:layout_constraintTop_toBottomOf="@+id/label_food" />
+
+        <TextView
+            android:id="@+id/label_food"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_food_name"
+            app:layout_constraintBottom_toTopOf="@+id/editText_food_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_image" />
+
+        <TextView
+            android:id="@+id/label_protein"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_protein"
+            app:layout_constraintBottom_toTopOf="@+id/editText_protein"
+            app:layout_constraintEnd_toEndOf="@+id/label_calories"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/label_calories"
+            app:layout_constraintTop_toBottomOf="@+id/editText_calories" />
+
+        <TextView
+            android:id="@+id/label_fat"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_fat"
+            app:layout_constraintBottom_toBottomOf="@+id/label_protein"
+            app:layout_constraintEnd_toEndOf="@+id/label_carbs"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/label_carbs" />
+
+        <EditText
+            android:id="@+id/editText_protein"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintBottom_toTopOf="@+id/button_register_food"
+            app:layout_constraintEnd_toEndOf="@+id/label_protein"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/label_protein"
+            app:layout_constraintTop_toBottomOf="@+id/label_protein" />
+
+        <EditText
+            android:id="@+id/editText_fat"
+            style="@style/TextAppearance.SubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_protein"
+            app:layout_constraintEnd_toEndOf="@+id/label_fat"
+            app:layout_constraintStart_toStartOf="@+id/label_fat" />
+
+        <Button
+            android:id="@+id/button_register_food"
+            style="@android:style/Widget.Material.Button"
+            android:layout_width="125dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/button_submit_register_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_protein" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

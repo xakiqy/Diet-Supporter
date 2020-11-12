@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/diet_navigation"
+    app:startDestination="@id/frontTabFragment">
+
+    <fragment
+        android:id="@+id/userDataChangeFragment"
+        android:name="com.example.diet_supporter.ui.diet.UserDataChangeFragment"
+        android:label="@string/userDataChangeFramentLabel" />
+    <fragment
+        android:id="@+id/userDietChangeFragment"
+        android:name="com.example.diet_supporter.ui.diet.UserDietChangeFragment"
+        android:label="@string/userDietChangeFragmentLabel" />
+    <fragment
+        android:id="@+id/graphDietFragment"
+        android:name="com.example.diet_supporter.ui.graph.GraphDietFragment"
+        android:label="@string/graphDietFragmentLabel" />
+    <fragment
+        android:id="@+id/graphWeightFragment"
+        android:name="com.example.diet_supporter.ui.graph.GraphWeightFragment"
+        android:label="@string/graphWeightFragmentLabel" />
+    <fragment
+        android:id="@+id/registerPersonalFoodFragment"
+        android:name="com.example.diet_supporter.ui.diet.RegisterPersonalFoodFragment"
+        android:label="@string/personalFoodFragmentLabel" />
+    <fragment
+        android:id="@+id/frontTabFragment"
+        android:name="com.example.diet_supporter.ui.diet.FrontTabFragment"
+        android:label="@string/frontTabFragmentLabel">
+        <action
+            android:id="@+id/action_frontTabFragment_to_graphWeightFragment"
+            app:destination="@id/graphWeightFragment" />
+        <action
+            android:id="@+id/action_frontTabFragment_to_graphDietFragment"
+            app:destination="@id/graphDietFragment" />
+        <action
+            android:id="@+id/action_frontTabFragment_to_userDietChangeFragment"
+            app:destination="@id/userDietChangeFragment" />
+        <action
+            android:id="@+id/action_frontTabFragment_to_userDataChangeFragment"
+            app:destination="@id/userDataChangeFragment" />
+        <action
+            android:id="@+id/action_frontTabFragment_to_foodTabFragment"
+            app:destination="@id/foodTabFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodTabFragment"
+        android:name="com.example.diet_supporter.ui.diet.FoodTabFragment"
+        android:label="@string/foodTabFragment" >
+        <action
+            android:id="@+id/action_foodTabFragment_to_personalFoodTabFragment"
+            app:destination="@id/personalFoodTabFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalFoodTabFragment"
+        android:name="com.example.diet_supporter.ui.diet.PersonalFoodTabFragment"
+        android:label="@string/personalFoodFragmentLabel">
+        <action
+            android:id="@+id/action_personalFoodTabFragment_to_personalFoodConsumeFragment"
+            app:destination="@id/personalFoodConsumeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_personalFoodTabFragment_to_registerPersonalFoodFragment"
+            app:destination="@id/registerPersonalFoodFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalFoodConsumeFragment"
+        android:name="com.example.diet_supporter.ui.diet.PersonalFoodConsumeFragment"
+        android:label="@string/personalFoodFragmentLabel">
+        <argument
+            android:name="personalFood"
+            app:argType="com.example.diet_supporter.database.PersonalFood" />
+    </fragment>
+
+</navigation>

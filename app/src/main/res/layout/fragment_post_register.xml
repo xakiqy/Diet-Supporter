@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_register">
+
+        <Button
+            android:id="@+id/button_start_diet"
+            style="@android:style/Widget.Material.Light.Button.Inset"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:rotation="-5"
+            android:text="@string/button_post_register_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_average_activity" />
+
+        <TextView
+            android:id="@+id/label_diet_difficulty"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="casual"
+            android:rotation="-5"
+            android:text="@string/label_diet_difficulty"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_diet_difficulty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_to_start_diet" />
+
+        <Spinner
+            android:id="@+id/spinner_diet_difficulty"
+            android:theme="@style/SpinnerTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/diet_difficulty"
+            android:rotation="-5"
+            app:layout_constraintBottom_toTopOf="@+id/label_average_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_diet_difficulty" />
+
+        <TextView
+            android:id="@+id/text_average_activity"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:maxEms="15"
+            android:maxLines="3"
+            android:rotation="-5"
+            android:text="@string/physical_activity_hint_sedentary"
+            app:layout_constraintBottom_toTopOf="@+id/button_start_diet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_physical_activity" />
+
+        <TextView
+            android:id="@+id/label_average_activity"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:rotation="-5"
+            android:text="@string/label_average_activity"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_physical_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_diet_difficulty" />
+
+        <Spinner
+            android:id="@+id/spinner_physical_activity"
+            android:theme ="@style/SpinnerTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/physical_activity"
+            android:rotation="-5"
+            app:layout_constraintBottom_toTopOf="@+id/text_average_activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_average_activity" />
+
+        <TextView
+            android:id="@+id/label_to_start_diet"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/label_to_start_diet"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/label_diet_difficulty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

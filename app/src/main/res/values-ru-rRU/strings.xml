@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="database">db_food_ru.db</string>
+    <string name="app_name">Пощник по диете</string>
+    <string name="label_welcoming_text_header">Добро пожаловать</string>
+    <string name="welcoming_text">НАЧИНКА ДОДЕЛАТЬ</string>
+    <string name="button_welcome_page_text">Начать</string>
+    <string name="label_header_register_text">Заполни форму</string>
+    <string name="label_weight_register_text">Вес</string>
+    <string name="edit_weight_register_hint">вес в килограммах</string>
+    <string name="label_height_register_text">Рост</string>
+    <string name="edit_height_register_hint">рост в сантиметрах</string>
+    <string name="label_age_register_text">Возраст</string>
+    <string name="edit_age_register_hint">возраст в годах</string>
+    <string name="button_submit_register_text">Отправить</string>
+    <string name="label_name_register">Имя</string>
+    <string name="edit_name_register_hint">так вас будут называть</string>
+    <string name="weight_should_be">пишите как 75.400</string>
+    <string name="height_should_be">пишите как 178</string>
+    <string name="age_should_be">пишите как 98</string>
+    <string name="post_register_header">Ваша ежедневная потребность в килокалориях</string>
+    <string name="button_post_register_text">Начать диету</string>
+    <string name="label_gender_register_text">Пол</string>
+    <string name="label_calories_need">Требуемые калории</string>
+    <string name="label_calories_done">Используемые калории</string>
+    <string name="label_diet_plan">План диеты</string>
+    <string name="label_diet_difficulty">Сложность диеты</string>
+    <string name="label_to_start_diet">Для старта диеты,заполните форму</string>
+    <string name="label_average_activity">Средняя физическая активность</string>
+
+    <string-array name="gender">
+        <item>Мужчина</item>
+        <item >Женщина</item>
+    </string-array>
+    <string-array name="physical_activity">
+        <item>Минимальная</item>
+        <item>Маленькая</item>
+        <item>Лёгкая</item>
+        <item >Средняя</item>
+        <item>Тяжелая</item>
+    </string-array>
+    <string-array name="today_activity">
+        <item>Практически нет физической активности</item>
+        <item>Небольшая физическая активность</item>
+        <item>Нормальная физическая активность</item>
+        <item>Физическая активность с упражнениями</item>
+        <item>Тяжелая физическая нагрузка с поднятием тяжестей</item>
+    </string-array>
+    <string-array name="diet_difficulty">
+        <item>Лёгкая</item>
+        <item>Средняя</item>
+        <item>Тяжелая</item>
+    </string-array>
+    <string name="physical_activity_hint_sedentary">Минимальная активность</string>
+    <string name="physical_activity_hint_low">Немного хожу (програмист)</string>
+    <string name="physical_activity_hint_medium">Занимаюсь споротом 3–4 раза в неделю(грузчик, строитель)</string>
+    <string name="physical_activity_hint_heavy">Занимаетесь тяжёлым видом спорта</string>
+    <string name="physical_activity_hint_light">Активно хожу (продавец, менеджер)</string>
+    <string name="tab_diet">ДИЕТА</string>
+    <string name="tab_food">ПИЩА</string>
+    <string name="tab_personal_food">ЛИЧНЫЕ БЛЮДА</string>
+    <string name="tab_schedule_food">РАСПОРЯДОК</string>
+    <string name="search_food_hint">название пищи</string>
+    <string name="search_food_label">поиск пищи</string>
+    <string name="label_food_added">Съедено</string>
+    <string name="label_food_calories_gram">калорий в 100 граммах</string>
+    <string name="label_food_name">Пища</string>
+    <string name="label_calories">Калорий</string>
+    <string name="label_protein">Белок</string>
+    <string name="label_carbohydrate">Углеводы</string>
+    <string name="label_fat">Жиры</string>
+    <string name="label_food_name_abbr">Пища</string>
+    <string name="label_calories_abbr">Калл</string>
+    <string name="label_protein_abbr">Белок</string>
+    <string name="label_carbohydrate_abbr">Углвд</string>
+    <string name="label_fat_abbr">Жиры</string>
+    <string name="button_add_food">Добавить</string>
+    <string name="label_weight_grams">Вес(граммы)</string>
+    <string name="label_need">Надо</string>
+    <string name="label_done">Выполнено</string>
+    <string name="label_overused">Злоупотребили</string>
+    <string name="hint_type_food_name">Напишите название еды</string>
+    <string name="label_weight">Вес</string>
+    <string name="toast_user_data_change">Ваши данные изменены, план диеты измениться завтра</string>
+    <string name="bar_label_diet_change">Сложность диеты, физичиская активность</string>
+    <string name="bar_label_data_change">Ваши данные</string>
+    <string name="label_weight_full">Вес</string>
+    <string name="settings">Настройки</string>
+    <string name="graphs">Графики</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="label_dialog_realy">Вы уверены что хотите удалить еду?</string>
+    <string name="diet_graph">Диета</string>
+    <string name="personal_food_register">Добавить еду</string>
+    <string name="image_button_back">Назад</string>
+    <string name="about">О приложении</string>
+    <string name="frontTabFragmentLabel">Сегодняшняя диета</string>
+    <string name="userDietChangeFragmentLabel">Сменить диету</string>
+    <string name="userDataChangeFramentLabel">Сменить данные</string>
+    <string name="graphWeightFragmentLabel">История веса</string>
+    <string name="graphDietFragmentLabel">История диеты</string>
+    <string name="personalFoodFragmentLabel">Личная еда</string>
+    <string name="foodTabFragment">Общая еда</string>
+    <string name="registerFragmentLabel">Регистрация</string>
+    <string name="label_your_day">What is your day today</string>
+    <string name="button_start_new_day">Start new day</string>
+    <string name="toast_text_today_been_created">Ты уже создал сегодня, попробуй завтра</string>
+    <string name="hint_food_register">Как 3.49</string>
+</resources>
