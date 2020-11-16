@@ -10,14 +10,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_new_day"
         tools:context=".InitializeNewDayActivity">
 
         <TextView
             android:id="@+id/label_your_day"
-            style="@style/TextAppearance.Title"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/label_your_day"
             app:layout_constraintBottom_toTopOf="@+id/spinner"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +28,6 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:theme="@style/SpinnerTheme"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -39,7 +39,7 @@
 
         <Button
             android:id="@+id/button_start_new_day"
-            style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+            style="@android:style/Widget.Material.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

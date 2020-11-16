@@ -2,6 +2,7 @@ package com.example.diet_supporter.database
 
 import android.content.Context
 import androidx.room.*
+import com.example.diet_supporter.R
 
 
 @Database(entities = [User::class, UserPersonalDataHistory::class, DietHistory::class, Food::class, FoodAte::class, PersonalFood::class], version = 2, exportSchema = false)
@@ -23,7 +24,7 @@ fun getDatabase(context: Context): UserDietDatabase {
             INSTANCE = Room.databaseBuilder(context.applicationContext,
                 UserDietDatabase::class.java,
                 "user_diet")
-                .createFromAsset("db_food_en.db")
+                .createFromAsset(context.getString(R.string.database))
 //                .fallbackToDestructiveMigration()
                 .build()
         }
