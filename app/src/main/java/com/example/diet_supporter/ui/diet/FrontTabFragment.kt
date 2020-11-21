@@ -95,6 +95,7 @@ class FrontTabFragment : Fragment() {
                 } else {
                     startActivity(Intent(requireContext(), InitializeNewDayActivity::class.java))
                 }
+            R.id.aboutFragment -> findNavController().navigate(FrontTabFragmentDirections.actionFrontTabFragmentToAboutFragment())
         }
         return super.onOptionsItemSelected(item)
     }

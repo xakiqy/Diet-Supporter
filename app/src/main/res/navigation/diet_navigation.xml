@@ -49,6 +49,13 @@
         <action
             android:id="@+id/action_frontTabFragment_to_dietFactorChangeFragment"
             app:destination="@id/dietFactorChangeFragment" />
+        <action
+            android:id="@+id/action_frontTabFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/foodTabFragment"
@@ -93,5 +100,10 @@
         android:id="@+id/dietFactorChangeFragment"
         android:name="com.example.diet_supporter.ui.diet.DietFactorChangeFragment"
         android:label="@string/bar_label_diet_factor_change" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.diet_supporter.ui.diet.AboutFragment"
+        android:label="@string/about"
+        />
 
 </navigation>

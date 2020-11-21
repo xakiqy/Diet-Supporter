@@ -3,7 +3,6 @@
     <string name="database">db_food_ru.db</string>
     <string name="app_name">Пощник по диете</string>
     <string name="label_welcoming_text_header">Добро пожаловать</string>
-    <string name="welcoming_text">НАЧИНКА ДОДЕЛАТЬ</string>
     <string name="button_welcome_page_text">Начать</string>
     <string name="label_header_register_text">Заполни форму</string>
     <string name="label_weight_register_text">Вес</string>
@@ -102,8 +101,8 @@
     <string name="personalFoodFragmentLabel">Личная еда</string>
     <string name="foodTabFragment">Общая еда</string>
     <string name="registerFragmentLabel">Регистрация</string>
-    <string name="label_your_day">What is your day today</string>
-    <string name="button_start_new_day">Start new day</string>
+    <string name="label_your_day">Какой ваш день сегодня?</string>
+    <string name="button_start_new_day">Начать новый день</string>
     <string name="toast_text_today_been_created">Ты уже создал сегодня, попробуй завтра</string>
     <string name="hint_food_register">Как 3.49</string>
     <string name="label_custom_calories">Пользовательские калории</string>
@@ -113,4 +112,18 @@
     <string name="label_protein_percent">Белок %</string>
     <string name="label_carbohydrate_percent">Углеводы %</string>
     <string name="label_fat_percent">Жир %</string>
+
+    <string name="text_about_header">Добро пожаловать в дневник питания</string>
+    <string name="text_about">
+        Приложение с 7000 записей о еде, а также вы можете создавать свои собственные записи о еде.\n\n
+        Основано на Mifflin-St Jeor формуле, вашей активности и сложности диеты\n\n
+        На сегодняшний день, считается, что формула Mifflin-St Jeor дает наиболее точный результат. \n
+        Однако вы можете использовать рассчитанные вами калории. \n\n
+        По умолчанию макро процентаж 40% углеводы, 30% белок и 30% жир. \n
+        Вы можете изменить процент макро на странице факторов.\n\n
+        Изучите историю своего питания и измените свой вес, когда вы теряете или набираете вес,
+        для достижения лучших результатов.\n\n
+        После того, как вы закончите заполнение текущего дня, начните новый со значком календаря.
+    </string>
+    <string name="text_about_bottom">Это некоммерческий проект, основанный на данных из Интернета.</string>
 </resources>

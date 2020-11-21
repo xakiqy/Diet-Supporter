@@ -2,7 +2,6 @@
     <string name="database">db_food_en.db</string>
     <string name="app_name">Diet-Supporter</string>
     <string name="label_welcoming_text_header">Welcome</string>
-    <string name="welcoming_text">Some Welcoming Text</string>
     <string name="button_welcome_page_text">Start</string>
     <string name="label_header_register_text">Type your data</string>
     <string name="label_weight_register_text">Weight</string>
@@ -112,4 +111,18 @@
     <string name="label_protein_percent">Protein %</string>
     <string name="label_carbohydrate_percent">Carbohydrate %</string>
     <string name="label_fat_percent">Fat %</string>
+
+    <string name="text_about_header">Welcome to food diary</string>
+    <string name="text_about">
+        App with 7000 food records as well you can create your own food records.\n\n
+        Based on Mifflin-St Jeor equation, your activity and diet complexity.\n\n
+        Nowadays, the Mifflin-St Jeor equation is believed to give the most accurate result. \n
+        However, you can use your calculated calories. \n\n
+        Default macros are 40% carbohydrate, 30% protein and 30% fat. \n
+        You can change macros percent at factor page.\n\n
+        Study your diet history and change your weight when you are losing or
+        gaining weight for better results.\n\n
+        After you finish filling in the current day, start a new one with a calendar icon.
+    </string>
+    <string name="text_about_bottom">It is non-commercial project which based on internet data.</string>
 </resources>
