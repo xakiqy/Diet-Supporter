@@ -18,7 +18,7 @@ import com.example.diet_supporter.viewmodel.FoodTabViewModel
 class FoodTabFragment : Fragment() {
 
     companion object {
-        private val defaultWeight = 100
+        private const val defaultWeight = 100
     }
 
     private val viewModel: FoodTabViewModel by lazy {

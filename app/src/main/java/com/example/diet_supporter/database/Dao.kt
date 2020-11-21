@@ -133,3 +133,12 @@ interface PersonalFoodDao {
     @Delete
     fun deletePersonalFood(personalFood: PersonalFood)
 }
+
+@Dao
+interface FactorDao {
+    @Query("select * from factor where id = 1")
+    fun getLoadFactor() : LiveData<Factor>
+
+    @Update
+    fun updateFactor(factor: Factor)
+}

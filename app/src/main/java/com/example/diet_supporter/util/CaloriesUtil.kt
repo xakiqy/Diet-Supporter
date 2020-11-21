@@ -1,5 +1,6 @@
 package com.example.diet_supporter.util
 
+import com.example.diet_supporter.database.Factor
 import com.example.diet_supporter.database.LocalUserDiet
 
 fun getCaloriesBasedRequired(user: LocalUserDiet): Double {
@@ -15,14 +16,14 @@ fun getCaloriesNeed(user: LocalUserDiet): Double {
     return caloriesBased.times(user.physicalActivity!!.coef).times(user.dietDifficulty!!.calories)
 }
 
-fun getProteinNeed(calories: Double): Double {
-    return calories.times(0.30) / 4
+fun getProteinNeed(calories: Double, factor: Factor): Double {
+    return calories.times(factor.protein) / 4 / 100
 }
 
-fun getCarbohydrateNeed(calories: Double): Double {
-    return calories.times(0.40) / 4
+fun getCarbohydrateNeed(calories: Double, factor: Factor): Double {
+    return calories.times(factor.carbohydrate) / 4 / 100
 }
 
-fun getFatNeed(calories: Double): Double {
-    return calories.times(0.30) / 9
+fun getFatNeed(calories: Double, factor: Factor): Double {
+    return calories.times(factor.fat) / 9 / 100
 }

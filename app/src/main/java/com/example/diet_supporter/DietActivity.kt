@@ -44,7 +44,7 @@ class DietActivity : AppCompatActivity() {
             selectFragment(item)
             false
         }
-        actionBar?.setDisplayHomeAsUpEnabled(false);
+        actionBar?.setDisplayHomeAsUpEnabled(false)
         navController.addOnDestinationChangedListener { _, nd, _ ->
             when (nd.id) {
                 R.id.frontTabFragment -> {

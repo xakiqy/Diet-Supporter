@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.diet_supporter.database.Food
 import com.example.diet_supporter.databinding.FoodListViewBinding
 
-class FoodAdapter(val onClickListener: OnClickListener) :
+class FoodAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<Food, FoodAdapter.FoodDataViewHolder>(
         DiffCallback
     ) {

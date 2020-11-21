@@ -40,11 +40,11 @@ class GraphDietFragment : Fragment() {
 
         val graphBinder = GraphBinder(binding, requireContext())
 
-        viewModel.dietHistory.observe(viewLifecycleOwner, {
+        viewModel.dietHistory.observe(viewLifecycleOwner, { dh ->
 
             graphBinder.initializeDataByGraphType(
                 viewModel.graphType,
-                it.sortedBy { it.dietHistory.date })
+                dh.sortedBy { it.dietHistory.date })
         })
 
         binding.buttonLeft.setOnClickListener { viewModel.setDietHistoryLiveData(DayDirections.PREVIOUS) }
@@ -111,7 +111,7 @@ class GraphDietFragment : Fragment() {
             when (graph) {
                 FoodEnergy.Calories -> {
                     listNeed = dietHistory.map { it.dietHistory.caloriesNeed }
-                    listDone = dietHistory.map { it.foodAte.sumByDouble { it.energy } }
+                    listDone = dietHistory.map { dh -> dh.foodAte.sumByDouble { it.energy } }
                     description = Description().apply {
                         text = context.resources.getString(R.string.label_calories); textSize =
                         textSizeForGraph
@@ -120,7 +120,7 @@ class GraphDietFragment : Fragment() {
                 }
                 FoodEnergy.Protein -> {
                     listNeed = dietHistory.map { it.dietHistory.proteinNeed }
-                    listDone = dietHistory.map { it.foodAte.sumByDouble { it.protein } }
+                    listDone = dietHistory.map { dh -> dh.foodAte.sumByDouble { it.protein } }
                     description = Description().apply {
                         text = context.resources.getString(R.string.label_protein); textSize =
                         textSizeForGraph
@@ -129,7 +129,7 @@ class GraphDietFragment : Fragment() {
                 }
                 FoodEnergy.Carbs -> {
                     listNeed = dietHistory.map { it.dietHistory.carbohydrateNeed }
-                    listDone = dietHistory.map { it.foodAte.sumByDouble { it.carbohydrate } }
+                    listDone = dietHistory.map { dh -> dh.foodAte.sumByDouble { it.carbohydrate } }
                     description = Description().apply {
                         text = context.resources.getString(R.string.label_carbohydrate); textSize =
                         textSizeForGraph
@@ -138,7 +138,7 @@ class GraphDietFragment : Fragment() {
                 }
                 FoodEnergy.Fat -> {
                     listNeed = dietHistory.map { it.dietHistory.fatNeed }
-                    listDone = dietHistory.map { it.foodAte.sumByDouble { it.fat } }
+                    listDone = dietHistory.map { dh -> dh.foodAte.sumByDouble { it.fat } }
                     description = Description().apply {
                         text = context.resources.getString(R.string.label_fat); textSize =
                         textSizeForGraph

@@ -35,7 +35,7 @@ class GraphWeightFragment : Fragment() {
             val lineList = ArrayList<Entry>()
 
             it.forEachIndexed { index, dh ->
-                lineList.add(Entry(index.toFloat(), dh.weight!!.toFloat()))
+                lineList.add(Entry(index.toFloat(), dh.weight.toFloat()))
             }
 
             val lineData = LineDataSet(lineList, resources.getString(R.string.label_weight_full))

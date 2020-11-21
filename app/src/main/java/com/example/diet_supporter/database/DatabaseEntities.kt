@@ -123,7 +123,8 @@ data class DietHistoryWithFoodAte(
 @Entity
 @Parcelize
 data class Food(
-    @PrimaryKey(autoGenerate = true) val food_id: Long,
+    @PrimaryKey(autoGenerate = true)
+    val food_id: Long,
     val food_description: String,
     val energy: Double,
     val protein: Double,
@@ -178,6 +179,17 @@ data class PersonalFood(
         pathToImg: String
     ) : this(null, food_description, energy, protein, carbohydrate, fat, weight, pathToImg)
 }
+
+@Entity
+data class Factor(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long,
+    var protein: Int,
+    var carbohydrate: Int,
+    var fat: Int,
+    var custom: Int,
+    var calories: Double
+)
 
 data class LocalUserDiet(
     val weight: Double,

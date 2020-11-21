@@ -17,7 +17,7 @@ fun genderToLong(gender: Gender?): Long {
 }
 
 fun dipToFloat(context: Context, textSize: Int): Float {
-    val scale = context.resources.displayMetrics.scaledDensity;
+    val scale = context.resources.displayMetrics.scaledDensity
     return context.resources.getDimensionPixelSize(textSize) / scale
 }
 

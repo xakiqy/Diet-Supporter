@@ -19,7 +19,7 @@ enum class Gender(val gender: Boolean) {
     WOMAN(true)
 }
 
-enum class DayDirections() {
+enum class DayDirections {
     NEXT,
     PREVIOUS,
     HOLD,

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.diet_supporter.viewmodel.DietFactorChangeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_register"
+        app:layoutDescription="@xml/fragment_factor_scene">
+
+        <TextView
+            android:id="@+id/label_protein"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:rotation="-5"
+            android:text="@string/label_protein_percent"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_protein"
+            app:layout_constraintEnd_toStartOf="@+id/edit_protein" />
+
+        <EditText
+            android:id="@+id/edit_protein"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="6"
+            android:inputType="numberSigned"
+            android:rotation="-5"
+            android:text="@={`` + viewModel.factor.protein}"
+            app:layout_constraintBottom_toTopOf="@+id/edit_fat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_carbohydrate"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:rotation="-5"
+            android:text="@string/label_carbohydrate_percent"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_carbohydrate"
+            app:layout_constraintEnd_toStartOf="@+id/edit_carbohydrate" />
+
+        <EditText
+            android:id="@+id/edit_carbohydrate"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:ems="6"
+            android:inputType="numberSigned"
+            android:rotation="-5"
+            android:text="@={`` + viewModel.factor.carbohydrate}"
+            app:layout_constraintBottom_toTopOf="@+id/switch_custom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_fat" />
+
+        <TextView
+            android:id="@+id/label_fat"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:rotation="-5"
+            android:text="@string/label_fat_percent"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_fat"
+            app:layout_constraintEnd_toStartOf="@+id/edit_fat" />
+
+        <EditText
+            android:id="@+id/edit_fat"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:inputType="numberSigned"
+            android:rotation="-5"
+            android:text="@={`` + viewModel.factor.fat}"
+            app:layout_constraintBottom_toTopOf="@+id/edit_carbohydrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_protein" />
+
+        <Button
+            android:id="@+id/button_submit"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/button_update"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_custom"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-5"
+            android:text="@string/label_custom_calories"
+            app:layout_constraintBottom_toTopOf="@+id/edit_calories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_carbohydrate" />
+
+        <TextView
+            android:id="@+id/label_calories"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:rotation="-5"
+            android:text="@string/label_calories"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_calories"
+            app:layout_constraintEnd_toStartOf="@+id/edit_calories" />
+
+        <EditText
+            android:id="@+id/edit_calories"
+            style="@style/TextAppearance.SubTitleCasual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="6"
+            android:inputType="numberDecimal"
+            android:rotation="-5"
+            android:text="@={`` + viewModel.factor.calories}"
+            app:layout_constraintBottom_toTopOf="@+id/button_submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch_custom" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

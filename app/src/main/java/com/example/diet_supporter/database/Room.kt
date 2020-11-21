@@ -5,7 +5,8 @@ import androidx.room.*
 import com.example.diet_supporter.R
 
 
-@Database(entities = [User::class, UserPersonalDataHistory::class, DietHistory::class, Food::class, FoodAte::class, PersonalFood::class], version = 2, exportSchema = false)
+@Database(entities = [User::class, UserPersonalDataHistory::class, DietHistory::class, Food::class, FoodAte::class, PersonalFood::class,
+Factor::class], version = 2, exportSchema = false)
 @TypeConverters(DietDifficultyConverter::class, PhysicalActivityConverter::class, DateConverter::class, GenderConverter::class)
 abstract class UserDietDatabase : RoomDatabase() {
     abstract val personalFoodDao : PersonalFoodDao
@@ -14,6 +15,7 @@ abstract class UserDietDatabase : RoomDatabase() {
     abstract val dietHistoryDao: DietHistoryDao
     abstract val foodDao : FoodDao
     abstract val foodAteDao : FoodAteDao
+    abstract val factorDao : FactorDao
 }
 
 private lateinit var INSTANCE: UserDietDatabase

@@ -32,7 +32,7 @@ class RegisterPersonalFoodFragment : Fragment() {
         private val myOptions = RequestOptions()
             .override(750, 750).centerCrop().placeholder(R.drawable.loading_animation)
             .error(R.drawable.ic_broken_image)
-        private val IMAGE_PICK_CODE = 1000
+        private const val IMAGE_PICK_CODE = 1000
     }
 
     override fun onCreateView(

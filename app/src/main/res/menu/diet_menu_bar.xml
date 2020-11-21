@@ -4,33 +4,39 @@
 
     <item android:title="@string/graphs">
         <menu>
-    <item
-        android:id="@+id/graphDietFragment"
-        android:icon="@drawable/bar_graph"
-        android:title="@string/diet_graph"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/graphDietFragment"
+                android:icon="@drawable/bar_graph"
+                android:title="@string/diet_graph"
+                app:showAsAction="never" />
 
-    <item
-        android:id="@+id/graphWeightFragment"
-        android:icon="@drawable/weight_graph"
-        android:title="@string/label_weight_full"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/graphWeightFragment"
+                android:icon="@drawable/weight_graph"
+                android:title="@string/label_weight_full"
+                app:showAsAction="never" />
         </menu>
     </item>
 
     <item android:title="@string/settings">
         <menu>
-    <item
-        android:id="@+id/userDataChangeFragment"
-        android:icon="@drawable/user_data"
-        android:title="@string/bar_label_data_change"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/userDataChangeFragment"
+                android:icon="@drawable/user_data"
+                android:title="@string/bar_label_data_change"
+                app:showAsAction="never" />
 
-    <item
-        android:id="@+id/userDietChangeFragment"
-        android:icon="@drawable/user_activity"
-        android:title="@string/bar_label_diet_change"
-        app:showAsAction="never" />
+            <item
+                android:id="@+id/userDietChangeFragment"
+                android:icon="@drawable/user_activity"
+                android:title="@string/bar_label_diet_change"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/dietFactorChangeFragment"
+                android:icon="@drawable/factor_icon"
+                android:title="@string/bar_label_diet_factor_change"
+                app:showAsAction="never" />
         </menu>
     </item>
 </menu>

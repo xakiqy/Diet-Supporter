@@ -93,7 +93,7 @@
     <string name="personal_food_register">Add food</string>
     <string name="image_button_back">Back</string>
     <string name="about">About</string>
-    <string name="frontTabFragmentLabel">Today\'s diet</string>
+    <string name="frontTabFragmentLabel">Diet day</string>
     <string name="userDietChangeFragmentLabel">Diet change</string>
     <string name="userDataChangeFramentLabel">Data change</string>
     <string name="graphWeightFragmentLabel">Weight history</string>
@@ -105,4 +105,11 @@
     <string name="button_start_new_day">Start new day</string>
     <string name="toast_text_today_been_created">You already created today, try tomorrow</string>
     <string name="hint_food_register">like 3.49</string>
+    <string name="label_custom_calories">Custom calories</string>
+    <string name="bar_label_diet_factor_change">Diet Factor</string>
+    <string name="button_update">Update</string>
+    <string name="updated">Updated</string>
+    <string name="label_protein_percent">Protein %</string>
+    <string name="label_carbohydrate_percent">Carbohydrate %</string>
+    <string name="label_fat_percent">Fat %</string>
 </resources>

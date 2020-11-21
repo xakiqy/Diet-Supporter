@@ -21,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:rotation="-5"
             android:text="@string/label_header_register_text"
-            android:textColor="#009688"
+            android:textColor="#FF5722"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,6 @@
             style="@style/TextAppearance.SubTitleCasual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="8"
             android:hint="@string/edit_weight_register_hint"
@@ -40,6 +39,7 @@
             android:rotation="-5"
             app:layout_constraintBottom_toTopOf="@+id/edit_height_register"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_name_register" />
 
@@ -78,6 +78,7 @@
             android:rotation="-5"
             app:layout_constraintBottom_toTopOf="@+id/edit_age_register"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_weight_register" />
 
@@ -105,29 +106,26 @@
             android:rotation="-5"
             app:layout_constraintBottom_toTopOf="@+id/spinner_gender"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_height_register" />
 
         <Button
             android:id="@+id/button_submit_register"
-            style="@android:style/Widget.Material.Light.Button"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:rotation="-5"
+            android:layout_marginBottom="16dp"
             android:text="@string/button_submit_register_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner_gender" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/edit_name_register"
             style="@style/TextAppearance.SubTitleCasual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:ems="8"
             android:hint="@string/edit_name_register_hint"
@@ -161,6 +159,7 @@
             android:theme="@style/SpinnerTheme"
             app:layout_constraintBottom_toTopOf="@+id/button_submit_register"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_age_register" />
 

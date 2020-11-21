@@ -16,7 +16,6 @@ import com.example.diet_supporter.adapter.FoodAteAdapter
 import com.example.diet_supporter.databinding.FragmentTabDietBinding
 import com.example.diet_supporter.util.getDateTodayWithoutTime
 import com.example.diet_supporter.viewmodel.FrontTabViewModel
-import java.text.SimpleDateFormat
 
 class FrontTabFragment : Fragment() {
 
@@ -85,7 +84,6 @@ class FrontTabFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val navController = findNavController()
         when (item.itemId) {
             R.id.initializeNewDayActivity ->
                 if (viewModel.dietHistoryWithFoodAte.value!!.dietHistory.date == getDateTodayWithoutTime()) {

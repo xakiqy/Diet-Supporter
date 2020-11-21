@@ -94,7 +94,7 @@
     <string name="personal_food_register">Добавить еду</string>
     <string name="image_button_back">Назад</string>
     <string name="about">О приложении</string>
-    <string name="frontTabFragmentLabel">Сегодняшняя диета</string>
+    <string name="frontTabFragmentLabel">День диеты</string>
     <string name="userDietChangeFragmentLabel">Сменить диету</string>
     <string name="userDataChangeFramentLabel">Сменить данные</string>
     <string name="graphWeightFragmentLabel">История веса</string>
@@ -106,4 +106,11 @@
     <string name="button_start_new_day">Start new day</string>
     <string name="toast_text_today_been_created">Ты уже создал сегодня, попробуй завтра</string>
     <string name="hint_food_register">Как 3.49</string>
+    <string name="label_custom_calories">Пользовательские калории</string>
+    <string name="bar_label_diet_factor_change">Фактор питания</string>
+    <string name="button_update">Обновить</string>
+    <string name="updated">Обновленно</string>
+    <string name="label_protein_percent">Белок %</string>
+    <string name="label_carbohydrate_percent">Углеводы %</string>
+    <string name="label_fat_percent">Жир %</string>
 </resources>
