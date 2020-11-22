@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="database">db_food_ru.db</string>
-    <string name="app_name">Пощник по диете</string>
+    <string name="app_name">Дневник диеты</string>
     <string name="label_welcoming_text_header">Добро пожаловать</string>
     <string name="button_welcome_page_text">Начать</string>
     <string name="label_header_register_text">Заполни форму</string>

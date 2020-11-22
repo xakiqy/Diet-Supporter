@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.diet_supporter.viewmodel.FrontTabViewModel" />
+            type="com.xakiqy.diet_supporter.viewmodel.FrontTabViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout

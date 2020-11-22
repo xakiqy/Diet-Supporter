@@ -6,7 +6,7 @@
 
         <variable
             name="property"
-            type="com.example.diet_supporter.database.Food" />
+            type="com.xakiqy.diet_supporter.database.Food" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

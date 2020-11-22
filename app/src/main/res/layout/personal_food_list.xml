@@ -6,7 +6,7 @@
 
         <variable
             name="property"
-            type="com.example.diet_supporter.database.PersonalFood" />
+            type="com.xakiqy.diet_supporter.database.PersonalFood" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

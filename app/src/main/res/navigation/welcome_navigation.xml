@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.diet_supporter.ui.register.RegisterFragment"
+        android:name="com.xakiqy.diet_supporter.ui.register.RegisterFragment"
         android:label="@string/registerFragmentLabel">
         <action
             android:id="@+id/action_registerFragment_to_postRegisterFragment"
@@ -17,10 +17,10 @@
     </fragment>
     <fragment
         android:id="@+id/postRegisterFragment"
-        android:name="com.example.diet_supporter.ui.register.PostRegisterFragment"
+        android:name="com.xakiqy.diet_supporter.ui.register.PostRegisterFragment"
         android:label="@string/registerFragmentLabel">
         <argument
             android:name="user"
-            app:argType="com.example.diet_supporter.database.User" />
+            app:argType="com.xakiqy.diet_supporter.database.User" />
     </fragment>
 </navigation>

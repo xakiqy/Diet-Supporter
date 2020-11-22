@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.diet_supporter.viewmodel.DietFactorChangeViewModel" />
+            type="com.xakiqy.diet_supporter.viewmodel.DietFactorChangeViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout

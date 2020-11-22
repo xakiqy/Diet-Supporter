@@ -5,27 +5,27 @@
 
     <fragment
         android:id="@+id/userDataChangeFragment"
-        android:name="com.example.diet_supporter.ui.diet.UserDataChangeFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.UserDataChangeFragment"
         android:label="@string/userDataChangeFramentLabel" />
     <fragment
         android:id="@+id/userDietChangeFragment"
-        android:name="com.example.diet_supporter.ui.diet.UserDietChangeFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.UserDietChangeFragment"
         android:label="@string/userDietChangeFragmentLabel" />
     <fragment
         android:id="@+id/graphDietFragment"
-        android:name="com.example.diet_supporter.ui.graph.GraphDietFragment"
+        android:name="com.xakiqy.diet_supporter.ui.graph.GraphDietFragment"
         android:label="@string/graphDietFragmentLabel" />
     <fragment
         android:id="@+id/graphWeightFragment"
-        android:name="com.example.diet_supporter.ui.graph.GraphWeightFragment"
+        android:name="com.xakiqy.diet_supporter.ui.graph.GraphWeightFragment"
         android:label="@string/graphWeightFragmentLabel" />
     <fragment
         android:id="@+id/registerPersonalFoodFragment"
-        android:name="com.example.diet_supporter.ui.diet.RegisterPersonalFoodFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.RegisterPersonalFoodFragment"
         android:label="@string/personalFoodFragmentLabel" />
     <fragment
         android:id="@+id/frontTabFragment"
-        android:name="com.example.diet_supporter.ui.diet.FrontTabFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.FrontTabFragment"
         android:label="@string/frontTabFragmentLabel">
         <action
             android:id="@+id/action_frontTabFragment_to_graphWeightFragment"
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/foodTabFragment"
-        android:name="com.example.diet_supporter.ui.diet.FoodTabFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.FoodTabFragment"
         android:label="@string/foodTabFragment" >
         <action
             android:id="@+id/action_foodTabFragment_to_personalFoodTabFragment"
@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/personalFoodTabFragment"
-        android:name="com.example.diet_supporter.ui.diet.PersonalFoodTabFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.PersonalFoodTabFragment"
         android:label="@string/personalFoodFragmentLabel">
         <action
             android:id="@+id/action_personalFoodTabFragment_to_personalFoodConsumeFragment"
@@ -90,19 +90,19 @@
     </fragment>
     <fragment
         android:id="@+id/personalFoodConsumeFragment"
-        android:name="com.example.diet_supporter.ui.diet.PersonalFoodConsumeFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.PersonalFoodConsumeFragment"
         android:label="@string/personalFoodFragmentLabel">
         <argument
             android:name="personalFood"
-            app:argType="com.example.diet_supporter.database.PersonalFood" />
+            app:argType="com.xakiqy.diet_supporter.database.PersonalFood" />
     </fragment>
     <fragment
         android:id="@+id/dietFactorChangeFragment"
-        android:name="com.example.diet_supporter.ui.diet.DietFactorChangeFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.DietFactorChangeFragment"
         android:label="@string/bar_label_diet_factor_change" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.diet_supporter.ui.diet.AboutFragment"
+        android:name="com.xakiqy.diet_supporter.ui.diet.AboutFragment"
         android:label="@string/about"
         />
 

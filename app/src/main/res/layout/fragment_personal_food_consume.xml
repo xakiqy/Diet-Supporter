@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.diet_supporter.viewmodel.PersonalFoodConsumeViewModel" />
+            type="com.xakiqy.diet_supporter.viewmodel.PersonalFoodConsumeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
