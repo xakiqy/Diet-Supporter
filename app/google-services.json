@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "680575844021",
+    "firebase_url": "https://diet-4c050.firebaseio.com",
+    "project_id": "diet-4c050",
+    "storage_bucket": "diet-4c050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680575844021:android:e4205b05fc6cdba69708fc",
+        "android_client_info": {
+          "package_name": "com.xakiqy.diet_diary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680575844021-v2e0on56sl53b4htei9u4gs0o6qpjsvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGwDPy40d0hqltNv8FFnVuiHPPr_IWHEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680575844021-v2e0on56sl53b4htei9u4gs0o6qpjsvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

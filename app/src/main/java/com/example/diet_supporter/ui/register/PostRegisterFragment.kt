@@ -32,7 +32,6 @@ class PostRegisterFragment : Fragment() {
     ): View? {
         val binding = FragmentPostRegisterBinding.inflate(inflater)
         val user = PostRegisterFragmentArgs.fromBundle(requireArguments()).user
-        binding.labelToStartDiet.visibility = View.VISIBLE
 
         binding.spinnerPhysicalActivity.onItemSelectedListener =
             viewModel.activitySpinnerListener(binding)
