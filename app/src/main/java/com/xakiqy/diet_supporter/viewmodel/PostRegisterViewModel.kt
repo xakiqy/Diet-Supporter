@@ -3,24 +3,26 @@ package com.xakiqy.diet_supporter.viewmodel
 import android.content.Context
 import android.view.View
 import android.widget.AdapterView
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.User
+import com.xakiqy.diet_supporter.database.UserDietDatabase
 import com.xakiqy.diet_supporter.database.UserPersonalDataHistory
-import com.xakiqy.diet_supporter.database.getDatabase
 import com.xakiqy.diet_supporter.databinding.FragmentPostRegisterBinding
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class PostRegisterViewModel(context: Context) : ViewModel() {
+class PostRegisterViewModel @ViewModelInject constructor(
+    @ApplicationContext context: Context,
+    private val database: UserDietDatabase
+) : ViewModel() {
     private val res = context
     private val job = Job()
     private val ioScope = CoroutineScope(Dispatchers.IO + job)
-
-    private val database = getDatabase(context)
 
     fun registerUserDiet(user: User) {
         ioScope.launch {
@@ -68,16 +70,5 @@ class PostRegisterViewModel(context: Context) : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
-    }
-
-    class Factory(private val context: Context) :
-        ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(PostRegisterViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return PostRegisterViewModel(context) as T
-            }
-            throw IllegalArgumentException("Unable to construct viewmodel")
-        }
     }
 }

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.User
 import com.xakiqy.diet_supporter.databinding.FragmentPostRegisterBinding
@@ -15,13 +15,11 @@ import com.xakiqy.diet_supporter.util.activityToSpinnerPosition
 import com.xakiqy.diet_supporter.util.difficultyOfSpinnerPosition
 import com.xakiqy.diet_supporter.util.difficultyToSpinnerPosition
 import com.xakiqy.diet_supporter.viewmodel.UserDietChangeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserDietChangeFragment : Fragment() {
-    private val viewModel: UserDietChangeViewModel by lazy {
-        ViewModelProvider(this, UserDietChangeViewModel.Factory(requireContext())).get(
-            UserDietChangeViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<UserDietChangeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

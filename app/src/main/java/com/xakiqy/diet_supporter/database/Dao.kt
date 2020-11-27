@@ -46,7 +46,10 @@ interface DietHistoryDao {
 
     @Transaction
     @Query("select * from diethistory where date > :daysFrom and date < :daysTo")
-    fun getDietHistoryWithFoodBetweenDays(daysFrom: Long, daysTo: Long): List<DietHistoryWithFoodAte>
+    fun getDietHistoryWithFoodBetweenDays(
+        daysFrom: Long,
+        daysTo: Long
+    ): List<DietHistoryWithFoodAte>
 
     @Query("select * from diethistory ORDER BY ID DESC")
     fun getDietHistory(): LiveData<List<DietHistory>>
@@ -122,10 +125,10 @@ interface PersonalFoodDao {
     fun getFoodByDescription(textDescription: String): List<PersonalFood>
 
     @Query("select * from personalfood LIMIT 50")
-    fun getAllPersonalFood() : List<PersonalFood>
+    fun getAllPersonalFood(): List<PersonalFood>
 
     @Query("select * from personalfood")
-    fun getLoadAllPersonalFood() : LiveData<List<PersonalFood>>
+    fun getLoadAllPersonalFood(): LiveData<List<PersonalFood>>
 
     @Query("select * from personalfood where food_description like :textDescription || '%' LIMIT 50")
     fun getLoadFoodByDescription(textDescription: String): LiveData<List<PersonalFood>>
@@ -137,7 +140,7 @@ interface PersonalFoodDao {
 @Dao
 interface FactorDao {
     @Query("select * from factor where id = 1")
-    fun getLoadFactor() : LiveData<Factor>
+    fun getLoadFactor(): LiveData<Factor>
 
     @Update
     fun updateFactor(factor: Factor)

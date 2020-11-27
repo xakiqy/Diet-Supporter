@@ -12,23 +12,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.PersonalFood
 import com.xakiqy.diet_supporter.databinding.FragmentPersonalFoodConsumeBinding
 import com.xakiqy.diet_supporter.viewmodel.PersonalFoodConsumeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.TimeUnit
 
+@AndroidEntryPoint
 class PersonalFoodConsumeFragment : Fragment() {
 
     private lateinit var binding: FragmentPersonalFoodConsumeBinding
 
-    private val viewModel: PersonalFoodConsumeViewModel by lazy {
-        ViewModelProvider(this, PersonalFoodConsumeViewModel.Factory(requireContext())).get(
-            PersonalFoodConsumeViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<PersonalFoodConsumeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -117,5 +115,5 @@ class PersonalFoodConsumeFragment : Fragment() {
             val leftSpacer = parent.getChildAt(1)
             leftSpacer.visibility = View.GONE
         }
-        }
+    }
 }

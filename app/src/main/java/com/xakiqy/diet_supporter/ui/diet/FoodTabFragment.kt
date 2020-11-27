@@ -8,24 +8,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.adapter.FoodAdapter
 import com.xakiqy.diet_supporter.database.FoodAte
 import com.xakiqy.diet_supporter.databinding.FragmentTabFoodBinding
 import com.xakiqy.diet_supporter.viewmodel.FoodTabViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FoodTabFragment : Fragment() {
 
     companion object {
         private const val defaultWeight = 100
     }
 
-    private val viewModel: FoodTabViewModel by lazy {
-        ViewModelProvider(this, FoodTabViewModel.Factory(requireContext())).get(
-            FoodTabViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<FoodTabViewModel>()
 
     private lateinit var binding: FragmentTabFoodBinding
 

@@ -53,7 +53,6 @@ class FoodAteAdapter(private val onClickListener: OnClickListener) :
         }
 
 
-
     }
 
     class FoodDataViewHolder(private var binding: FoodAteListViewBinding) :

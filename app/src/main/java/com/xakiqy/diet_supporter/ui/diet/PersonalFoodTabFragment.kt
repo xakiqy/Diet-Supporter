@@ -5,23 +5,21 @@ import android.view.*
 import android.widget.SearchView
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.adapter.PersonalFoodAdapter
 import com.xakiqy.diet_supporter.databinding.FragmentTabPersonalFoodBinding
 import com.xakiqy.diet_supporter.viewmodel.PersonalFoodTabViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PersonalFoodTabFragment : Fragment() {
 
     private var isSearch = true
 
-    private val viewModel: PersonalFoodTabViewModel by lazy {
-        ViewModelProvider(this, PersonalFoodTabViewModel.Factory(requireContext())).get(
-            PersonalFoodTabViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<PersonalFoodTabViewModel>()
 
     private lateinit var binding: FragmentTabPersonalFoodBinding
     override fun onCreateView(

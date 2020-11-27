@@ -2,18 +2,18 @@ package com.xakiqy.diet_supporter.viewmodel
 
 import android.content.Context
 import android.view.View
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.xakiqy.diet_supporter.R
-import com.xakiqy.diet_supporter.database.DietHistoryWithFoodAte
-import com.xakiqy.diet_supporter.database.FoodAte
-import com.xakiqy.diet_supporter.database.getDatabase
-import com.xakiqy.diet_supporter.databinding.FragmentTabDietBinding
-import com.xakiqy.diet_supporter.util.dipToFloat
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
+import com.xakiqy.diet_supporter.R
+import com.xakiqy.diet_supporter.database.DietHistoryWithFoodAte
+import com.xakiqy.diet_supporter.database.FoodAte
+import com.xakiqy.diet_supporter.database.UserDietDatabase
+import com.xakiqy.diet_supporter.databinding.FragmentTabDietBinding
+import com.xakiqy.diet_supporter.util.dipToFloat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -23,10 +23,10 @@ import timber.log.Timber
 import java.text.SimpleDateFormat
 import kotlin.math.abs
 
-class FrontTabViewModel(context: Context) : ViewModel() {
+class FrontTabViewModel @ViewModelInject constructor(private val database: UserDietDatabase) :
+    ViewModel() {
     private val job = Job()
     private val ioScope = CoroutineScope(Dispatchers.IO + job)
-    private val database = getDatabase(context)
 
     val user = database.userDao.getLoadUser()
 
@@ -132,17 +132,5 @@ class FrontTabViewModel(context: Context) : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
-    }
-
-
-    class Factory(private val context: Context) :
-        ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(FrontTabViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return FrontTabViewModel(context) as T
-            }
-            throw IllegalArgumentException("Unable to construct viewmodel")
-        }
     }
 }

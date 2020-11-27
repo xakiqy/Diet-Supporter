@@ -6,18 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.databinding.FragmentFactorBinding
 import com.xakiqy.diet_supporter.viewmodel.DietFactorChangeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DietFactorChangeFragment : Fragment() {
 
-    private val viewModel: DietFactorChangeViewModel by lazy {
-        ViewModelProvider(this, DietFactorChangeViewModel.Factory(requireContext())).get(
-            DietFactorChangeViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<DietFactorChangeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,20 +27,20 @@ class DietFactorChangeFragment : Fragment() {
         binding.viewModel = viewModel
 
         viewModel.factor.observe(viewLifecycleOwner, {
-            if(it.custom == 1) {
+            if (it.custom == 1) {
                 binding.switchCustom.isChecked = true
             }
         })
 
         binding.switchCustom.setOnCheckedChangeListener { buttonView, isChecked ->
-            if(isChecked){
+            if (isChecked) {
                 binding.motionLayout.transitionToEnd()
-            }else{
+            } else {
                 binding.motionLayout.transitionToStart()
             }
         }
 
-        binding.buttonSubmit.setOnClickListener{
+        binding.buttonSubmit.setOnClickListener {
             viewModel.updateFactor(binding.switchCustom.isChecked)
             Toast.makeText(requireContext(), getString(R.string.updated), Toast.LENGTH_SHORT).show()
         }

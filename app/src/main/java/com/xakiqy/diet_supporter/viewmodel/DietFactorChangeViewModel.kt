@@ -1,19 +1,17 @@
 package com.xakiqy.diet_supporter.viewmodel
 
-import android.content.Context
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.xakiqy.diet_supporter.database.getDatabase
+import com.xakiqy.diet_supporter.database.UserDietDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class DietFactorChangeViewModel(context: Context) : ViewModel() {
+class DietFactorChangeViewModel @ViewModelInject constructor(private val database: UserDietDatabase) :
+    ViewModel() {
     private val job = Job()
     private val ioScope = CoroutineScope(Dispatchers.IO + job)
-
-    private val database = getDatabase(context)
 
     val factor = database.factorDao.getLoadFactor()
 
@@ -33,16 +31,5 @@ class DietFactorChangeViewModel(context: Context) : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
-    }
-
-    class Factory(private val context: Context) :
-        ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(DietFactorChangeViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return DietFactorChangeViewModel(context) as T
-            }
-            throw IllegalArgumentException("Unable to construct viewmodel")
-        }
     }
 }

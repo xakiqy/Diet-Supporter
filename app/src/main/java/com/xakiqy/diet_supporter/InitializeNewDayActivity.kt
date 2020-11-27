@@ -6,27 +6,34 @@ import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.xakiqy.diet_supporter.database.DietHistory
-import com.xakiqy.diet_supporter.database.getDatabase
-import com.xakiqy.diet_supporter.database.toLocalUser
+import androidx.lifecycle.LiveData
+import com.xakiqy.diet_supporter.database.*
 import com.xakiqy.diet_supporter.databinding.ActivityInitializeNewDayBinding
 import com.xakiqy.diet_supporter.util.*
+import dagger.hilt.android.AndroidEntryPoint
+
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class InitializeNewDayActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class InitializeNewDayActivity() : AppCompatActivity() {
     private val job = Job()
     private val ioScope = CoroutineScope(Dispatchers.IO + job)
 
-    private val database = getDatabase(this)
-    private val user = database.userDao.getLoadUser()
-    private val factor = database.factorDao.getLoadFactor()
+    @Inject
+    lateinit var database: UserDietDatabase
+
+    lateinit var user: LiveData<User>
+    lateinit var factor: LiveData<Factor>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_initialize_new_day)
+        user = database.userDao.getLoadUser()
+        factor = database.factorDao.getLoadFactor()
 
         val binding = DataBindingUtil.setContentView(
             this,
@@ -48,13 +55,13 @@ class InitializeNewDayActivity : AppCompatActivity() {
         })
 
         factor.observe(this, {
-            if (factor.value!!.custom == 1){
+            if (factor.value!!.custom == 1) {
                 binding.spinner.visibility = View.GONE
                 binding.labelYourDay.visibility = View.GONE
             }
         })
 
-        binding.buttonBack.setOnClickListener{
+        binding.buttonBack.setOnClickListener {
             finish()
         }
 

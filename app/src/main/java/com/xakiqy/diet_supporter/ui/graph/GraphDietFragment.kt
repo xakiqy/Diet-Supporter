@@ -6,7 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.DietHistoryWithFoodAte
 import com.xakiqy.diet_supporter.databinding.FragmentDietGraphBinding
@@ -14,22 +19,16 @@ import com.xakiqy.diet_supporter.util.DayDirections
 import com.xakiqy.diet_supporter.util.FoodEnergy
 import com.xakiqy.diet_supporter.util.dipToFloat
 import com.xakiqy.diet_supporter.viewmodel.graph.GraphDietViewModel
-import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.formatter.ValueFormatter
+import dagger.hilt.android.AndroidEntryPoint
 import org.jetbrains.annotations.NotNull
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+@AndroidEntryPoint
 class GraphDietFragment : Fragment() {
-    private val viewModel: GraphDietViewModel by lazy {
-        ViewModelProvider(this, GraphDietViewModel.Factory(requireContext())).get(
-            GraphDietViewModel::class.java
-        )
-    }
+
+    private val viewModel by viewModels<GraphDietViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

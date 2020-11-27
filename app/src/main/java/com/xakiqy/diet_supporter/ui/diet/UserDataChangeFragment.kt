@@ -7,22 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.User
 import com.xakiqy.diet_supporter.databinding.FragmentRegisterBinding
 import com.xakiqy.diet_supporter.util.genderToLong
 import com.xakiqy.diet_supporter.util.longToGender
 import com.xakiqy.diet_supporter.viewmodel.UserDataChangeViewModel
-import java.lang.Exception
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserDataChangeFragment : Fragment() {
 
-    private val viewModel: UserDataChangeViewModel by lazy {
-        ViewModelProvider(this, UserDataChangeViewModel.Factory(requireContext())).get(
-            UserDataChangeViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<UserDataChangeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

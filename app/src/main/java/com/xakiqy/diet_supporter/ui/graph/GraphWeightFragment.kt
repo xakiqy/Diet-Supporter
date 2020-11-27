@@ -6,23 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.xakiqy.diet_supporter.R
-import com.xakiqy.diet_supporter.databinding.FragmentWeightGraphBinding
-import com.xakiqy.diet_supporter.util.dipToFloat
-import com.xakiqy.diet_supporter.viewmodel.graph.GraphWeightViewModel
+import androidx.fragment.app.viewModels
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.xakiqy.diet_supporter.R
+import com.xakiqy.diet_supporter.databinding.FragmentWeightGraphBinding
+import com.xakiqy.diet_supporter.util.dipToFloat
+import com.xakiqy.diet_supporter.viewmodel.graph.GraphWeightViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GraphWeightFragment : Fragment() {
 
-    private val viewModel: GraphWeightViewModel by lazy {
-        ViewModelProvider(this, GraphWeightViewModel.Factory(requireContext())).get(
-            GraphWeightViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<GraphWeightViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

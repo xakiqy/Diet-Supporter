@@ -11,7 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.drawToBitmap
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -19,14 +19,12 @@ import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.PersonalFood
 import com.xakiqy.diet_supporter.databinding.FragmentRegisterPersonalFoodBinding
 import com.xakiqy.diet_supporter.viewmodel.RegisterPersonalFoodViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterPersonalFoodFragment : Fragment() {
 
-    private val viewModel: RegisterPersonalFoodViewModel by lazy {
-        ViewModelProvider(this, RegisterPersonalFoodViewModel.Factory(requireContext())).get(
-            RegisterPersonalFoodViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<RegisterPersonalFoodViewModel>()
 
     companion object {
         private val myOptions = RequestOptions()

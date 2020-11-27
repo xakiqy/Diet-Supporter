@@ -1,20 +1,18 @@
 package com.xakiqy.diet_supporter.viewmodel
 
-import android.content.Context
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.xakiqy.diet_supporter.database.Food
 import com.xakiqy.diet_supporter.database.FoodAte
-import com.xakiqy.diet_supporter.database.getDatabase
+import com.xakiqy.diet_supporter.database.UserDietDatabase
 import kotlinx.coroutines.*
 
-class FoodTabViewModel(context: Context) : ViewModel() {
+class FoodTabViewModel @ViewModelInject constructor(private val database: UserDietDatabase) :
+    ViewModel() {
     private val job = Job()
     private val ioScope = CoroutineScope(Dispatchers.IO + job)
-
-    private val database = getDatabase(context)
 
     private val _foodData = MutableLiveData<List<Food>>()
     val foodData: LiveData<List<Food>>
@@ -51,16 +49,5 @@ class FoodTabViewModel(context: Context) : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
-    }
-
-    class Factory(private val context: Context) :
-        ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(FoodTabViewModel::class.java)) {
-                @Suppress("UNCHECKED_CAST")
-                return FoodTabViewModel(context) as T
-            }
-            throw IllegalArgumentException("Unable to construct viewmodel")
-        }
     }
 }

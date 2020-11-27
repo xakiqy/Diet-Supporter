@@ -24,11 +24,11 @@ class DietDifficultyConverter {
     }
 }
 
-class PhysicalActivityConverter{
+class PhysicalActivityConverter {
 
     @TypeConverter
-    fun toPhysicalActivity(coef: Double) : PhysicalActivity {
-        when(coef) {
+    fun toPhysicalActivity(coef: Double): PhysicalActivity {
+        when (coef) {
             PhysicalActivity.CHILL.coef -> return PhysicalActivity.CHILL
             PhysicalActivity.ORDINARY.coef -> return PhysicalActivity.ORDINARY
             PhysicalActivity.LIGHTTRAINING.coef -> return PhysicalActivity.LIGHTTRAINING
@@ -39,7 +39,7 @@ class PhysicalActivityConverter{
     }
 
     @TypeConverter
-    fun fromPhysicalActivity(pa: PhysicalActivity) : Double {
+    fun fromPhysicalActivity(pa: PhysicalActivity): Double {
         return pa.coef
     }
 
@@ -48,7 +48,7 @@ class PhysicalActivityConverter{
 class GenderConverter {
     @TypeConverter
     fun toGender(genderInt: Int?): Gender? {
-        when(genderInt){
+        when (genderInt) {
             0 -> return Gender.MAN
         }
         return Gender.WOMAN
@@ -56,7 +56,7 @@ class GenderConverter {
 
     @TypeConverter
     fun fromGender(gender: Gender?): Int? {
-        return when(gender){
+        return when (gender) {
             Gender.MAN -> 0
             else -> 1
         }

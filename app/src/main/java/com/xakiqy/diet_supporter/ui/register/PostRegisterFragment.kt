@@ -6,22 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.xakiqy.diet_supporter.PreLoadActivity
 import com.xakiqy.diet_supporter.database.User
 import com.xakiqy.diet_supporter.databinding.FragmentPostRegisterBinding
 import com.xakiqy.diet_supporter.util.activityOfSpinnerPosition
 import com.xakiqy.diet_supporter.util.difficultyOfSpinnerPosition
 import com.xakiqy.diet_supporter.viewmodel.PostRegisterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class PostRegisterFragment : Fragment() {
 
-    private val viewModel: PostRegisterViewModel by lazy {
-        ViewModelProvider(this, PostRegisterViewModel.Factory(requireContext())).get(
-            PostRegisterViewModel::class.java
-        )
-    }
+    private val viewModel by viewModels<PostRegisterViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

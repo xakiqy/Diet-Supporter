@@ -11,7 +11,6 @@ import com.xakiqy.diet_supporter.R
 import com.xakiqy.diet_supporter.database.User
 import com.xakiqy.diet_supporter.databinding.FragmentRegisterBinding
 import com.xakiqy.diet_supporter.util.longToGender
-import java.lang.Exception
 
 class RegisterFragment : Fragment() {
 
