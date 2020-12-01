@@ -1,6 +1,8 @@
 package com.xakiqy.diet_supporter.adapter
 
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -32,6 +34,11 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
                 .error(R.drawable.ic_broken_image)
         )
         .into(imgView)
+}
+
+@BindingAdapter("numberDoubleFormat")
+fun bindNumberDoubleFormat(textView: TextView, number: Double){
+    textView.text = String.format("%.1f", number)
 }
 
 @BindingAdapter("imageUrlBase")
